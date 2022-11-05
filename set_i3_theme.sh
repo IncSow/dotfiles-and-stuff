@@ -14,8 +14,9 @@ else
 	UNFOCUS="#1e1e1e #1e1e1e #F4800d #F4800d  #1e1e1e"
 	PROFILE="halloween_theme"
 fi
-sed -i "/dmenu_run/c\bindsym \$mod+d exec --no-startup-id dmenu_run $D_MENU_SCHEME" .config/i3/config
-sed -i "/client.focused/c\client.focused $FOCUS" .config/i3/config
-sed -i "/client.focused_active/c\client.focused_active $UNFOCUS" .config/i3/config
-sed -i "/client.unfocused/c\client.unfocused $UNFOCUS" .config/i3/config
-sed -i "/cool-retro/c\bindsym \$mod+Return exec /usr/bin/cool-retro-term --profile $PROFILE" .config/i3/config
+sed -i "/dmenu_run/c\bindsym \$mod+d exec --no-startup-id dmenu_run $D_MENU_SCHEME" ~/.config/i3/config
+sed -i "/client.focused/c\client.focused $FOCUS" ~/.config/i3/config
+sed -i "/client.focused_active/c\client.focused_active $UNFOCUS" ~/.config/i3/config
+sed -i "/client.unfocused/c\client.unfocused $UNFOCUS" ~/.config/i3/config
+sed -i "/cool-retro/c\bindsym \$mod+Return exec /usr/bin/cool-retro-term --profile $PROFILE" ~/.config/i3/config
+notify-send --urgency=normal "Theme has been switched to $PROFILE!"
