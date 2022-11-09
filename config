@@ -55,7 +55,7 @@ bindsym $mod+q kill
 bindsym $mod+d exec --no-startup-id dmenu_run -nb '#04001A' -sf '#04001A' -sb '#8e5cff' -nf '#8e5cff'
 
 # toggle my themes
-bindsym $mod+Shift+d exec /usr/bin/set_i3_theme.sh
+bindsym $mod+Shift+d exec "bash /usr/bin/set_i3_theme.sh"
 
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
@@ -202,10 +202,6 @@ bar {
         status_command i3status
 }
 
-default_border pixel 1
-new_window 1pixel
-new_float 1pixel
-
 # class                 border  backgr. text    indicator child_border
 client.focused          #04001a #04001A #8e5cff #8e5cff   #04001A
 client.focused_inactive #F4800d #F4800d #04001A #04001A   #F4800d
@@ -217,9 +213,10 @@ client.background       #ffc3c3
  
 hide_edge_borders both
 exec /usr/bin/compton --config /home/lilo/.compton.conf~.i3/config
+exec_always --no-startup-id killall compton
 exec --no-startup-id "compton -b"
-exec_always --no-startup-id killall back4.sh 
-exec_always --no-startup-id ~/Fancy/foo-Wallpaper-Feh-Gif/back4.sh auto ~/Fancy/foo-Wallpaper-Feh-Gif/background.gif
+exec_always --no-startup-id killall bash 
+exec_always --no-startup-id "bash ~/Fancy/foo-Wallpaper-Feh-Gif/back4.sh auto ~/Fancy/foo-Wallpaper-Feh-Gif/background.gif"
 exec --no-startup-id /usr/bin/xrandr --output DP-1 --auto --below eDP-1
 
 ## Trying to customize my own thing : 

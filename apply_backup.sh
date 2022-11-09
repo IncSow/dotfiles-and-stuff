@@ -1,4 +1,3 @@
-git pull origin master
 cp .bashrc ~/
 cp config ~/.config/i3
 cp set_i3_theme.sh /usr/bin/
